@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
 
   #Ansible master
   config.vm.define "master" do |master|
+  config.ssh.insert_key = false
     master.vm.hostname = "ansible-master"
     master.vm.box = "centos/8"
     master.vm.network :private_network, ip: "10.0.0.101"
